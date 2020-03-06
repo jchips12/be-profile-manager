@@ -11,14 +11,23 @@ import java.security.Principal;
 
 @RestController
 @Slf4j
-public class HelloController {
+public class HomeController {
 
-    @GetMapping(path = "/hello")
+    @GetMapping(path = "/admin")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    ResponseEntity<HelloResponse> helloWorld(Principal principal) {
+    ResponseEntity<HelloResponse> adminOnly(Principal principal) {
         return ResponseEntity.ok(HelloResponse.builder()
                 .username(principal.getName())
-                .message("Hello Wold")
+                .message("Hello Admin")
+                .build());
+    }
+
+    @GetMapping(path = "/member")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MEMBER')")
+    ResponseEntity<HelloResponse> allMembers(Principal principal) {
+        return ResponseEntity.ok(HelloResponse.builder()
+                .username(principal.getName())
+                .message("Hello Member")
                 .build());
     }
 }

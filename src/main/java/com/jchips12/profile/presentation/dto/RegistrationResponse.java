@@ -1,5 +1,6 @@
 package com.jchips12.profile.presentation.dto;
 
+import com.jchips12.profile.application.constant.ExecutionStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,10 +10,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 @NoArgsConstructor
-public class AppResponse {
+public class RegistrationResponse {
 
     private String messageId;
-    private String result;
+    private ExecutionStatus result;
     private String message;
 
 }

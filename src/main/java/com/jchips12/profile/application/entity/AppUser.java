@@ -19,6 +19,9 @@ public class AppUser {
     @MongoId
     private ObjectId id;
 
+    private String firstName;
+    private String lastName;
+    private String emailAddress;
     private String username;
     private String password;
     private List<GrantedAuthority> authorities;

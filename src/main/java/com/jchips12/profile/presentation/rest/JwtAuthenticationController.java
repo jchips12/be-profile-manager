@@ -5,6 +5,7 @@ import com.jchips12.profile.infrastructure.security.JwtTokenUtil;
 import com.jchips12.profile.presentation.dto.JwtRequest;
 import com.jchips12.profile.presentation.dto.JwtResponse;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin
 @RequiredArgsConstructor
+@RequestMapping("/api")
 public class JwtAuthenticationController {
 
     private final AuthenticationManager authenticationManager;

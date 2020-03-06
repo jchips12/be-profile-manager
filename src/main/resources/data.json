@@ -1,0 +1,11 @@
+[
+  { "username":  "user1",
+    "password":  "pass1",
+    "authorities":  ["ROLE_MEMBER"]},
+  { "username":  "user2",
+    "password":  "pass2",
+    "authorities":  ["ROLE_ADMIN"]},
+  { "username":  "user3",
+    "password":  "pass3",
+    "authorities":  ["ROLE_MEMBER"]}
+]
